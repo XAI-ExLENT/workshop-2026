@@ -233,11 +233,12 @@
                         <div class="form-row">
                             <div class="field-block">
                                 <label for="full-name">Full name</label>
-                                <input type="text" id="full-name" name="full_name" value="Jordan Bell">
+                                <input type="text" id="full-name" name="full_name" placeholder="Type your name here">
                             </div>
                             <div class="field-block">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" value="j.bell@msstate.edu">
+                                <input type="email" id="email" name="email" 
+                                placeholder="Type your email here" required>
                             </div>
                         </div>
 
@@ -258,14 +259,14 @@
                         <div class="field-block affiliation-block">
                             <label for="affiliation">University affiliation</label>
                             <input type="text" id="affiliation" name="university_affiliation"
-                                value="Mississippi State University">
+                                placeholder="Type your university name here">
                         </div>
 
-                        <div class="field-block abstract">
+                        <div class="field-block file:///C:/Users/priya/OneDrive/Desktop/PhD-MSSTATE/Fall-2026/XAI/xai-workshop-2026/index.htmlabstract">
                             <label for="abstract-file">Abstract upload (PDF or .txt)</label>
                             <div class="upload-box">
                                 <input type="file" id="abstract-file" name="file"
-                                    accept=".pdf,.txt,text/plain,application/pdf">
+                                    accept=".pdf,.txt,text/plain,application/pdf>
                                 <span class="upload-text">Drop a file here, or browse</span>
                                 <span class="upload-hint">Accepted: PDF, TXT • up to 10 MB</span>
                             </div>
@@ -281,38 +282,48 @@
         </section>
 
         <script>
-            const registrationForm = document.getElementById('registration-form');
-            const registrationSuccess = document.getElementById('registration-success');
+    const registrationForm = document.getElementById('registration-form');
+    const registrationSuccess = document.getElementById('registration-success');
 
-            registrationForm.addEventListener('submit', async function (event) {
-                event.preventDefault();
+    registrationForm.addEventListener('submit', async function (event) {
+        event.preventDefault();
 
-                const formData = new FormData(registrationForm);
-                try {
-                    const response = await fetch(registrationForm.action, {
-                        method: 'POST',
-                        body: formData,
-                    });
+        const formData = new FormData(registrationForm);
 
-                    if (!response.ok) {
-                        throw new Error('Registration failed');
-                    }
-
-                    const payload = await response.json().catch(() => ({}));
-                    registrationSuccess.textContent = payload.message || 'Registration done!';
-                    registrationSuccess.hidden = false;
-                    registrationSuccess.classList.add('visible');
-
-                    if (registrationForm.reset) {
-                        registrationForm.reset();
-                    }
-                } catch (error) {
-                    registrationSuccess.textContent = 'Registration failed. Please try again.';
-                    registrationSuccess.hidden = false;
-                    registrationSuccess.classList.add('visible');
+        try {
+            const response = await fetch(
+                'http://127.0.0.1:8000/submit_registration',
+                {
+                    method: 'POST',
+                    body: formData
                 }
-            });
-        </script>
+            );
+
+            const payload = await response.json();
+
+            if (!response.ok) {
+                throw new Error(payload.detail || 'Registration failed');
+            }
+
+            registrationSuccess.textContent =
+                payload.message || 'Registration submitted successfully!';
+
+            registrationSuccess.hidden = false;
+            registrationSuccess.classList.add('visible');
+
+            registrationForm.reset();
+
+        } catch (error) {
+            console.error(error);
+
+            registrationSuccess.textContent =
+                'Registration failed. Please try again.';
+
+            registrationSuccess.hidden = false;
+            registrationSuccess.classList.add('visible');
+        }
+    });
+</script>
 
 
 
