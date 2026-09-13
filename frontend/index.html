@@ -262,11 +262,11 @@
                                 placeholder="Type your university name here">
                         </div>
 
-                        <div class="field-block file:///C:/Users/priya/OneDrive/Desktop/PhD-MSSTATE/Fall-2026/XAI/xai-workshop-2026/index.htmlabstract">
+                        <div class="field-block">
                             <label for="abstract-file">Abstract upload (PDF or .txt)</label>
                             <div class="upload-box">
                                 <input type="file" id="abstract-file" name="file"
-                                    accept=".pdf,.txt,text/plain,application/pdf>
+                                    accept=".pdf,.txt,text/plain,application/pdf">
                                 <span class="upload-text">Drop a file here, or browse</span>
                                 <span class="upload-hint">Accepted: PDF, TXT • up to 10 MB</span>
                             </div>
@@ -292,7 +292,7 @@
 
         try {
             const response = await fetch(
-                'http://127.0.0.1:8000/submit_registration',
+                'https://xai-workshop-2026.onrender.com/submit_registration',
                 {
                     method: 'POST',
                     body: formData
