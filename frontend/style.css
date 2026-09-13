@@ -50,10 +50,12 @@ body {
 .xai-hero-copy h1 {
     font-size: clamp(4rem, 6vw, 6rem);
     line-height: 0.95;
-    font-weight: 800;
+    font-weight: 500;
     color: var(--text);
     letter-spacing: -0.055em;
     margin: 0 0 26px;
+    text-align: center;
+    font-style: italic;
 }
 
 .xai-hero-description {
@@ -811,12 +813,21 @@ p {
     letter-spacing: 0.14em;
 }
 
+/* .project-title {
+    color: var(--white);
+    font-size: clamp(2rem, 2.6vw, 2.6rem);
+    font-weight: 700;
+    margin: 8px 0 14px;
+    letter-spacing: -0.02em;
+    background:rgba(93, 23, 37, 0.96);
+} */
 .project-title {
     color: var(--white);
     font-size: clamp(2rem, 2.6vw, 2.6rem);
     font-weight: 700;
     margin: 8px 0 14px;
     letter-spacing: -0.02em;
+    background: transparent;
 }
 
 .project-card p {
@@ -825,11 +836,11 @@ p {
 }
 
 .registration-panel {
-    background: var(--white);
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 30px 34px;
-    box-shadow: 0 8px 22px rgba(31, 28, 29, 0.05);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
 }
 
 .registration-panel h2 {
@@ -1006,7 +1017,7 @@ p {
 }
 
 .site-footer {
-    background: #291114;
+    background:rgba(93, 23, 37, 0.96);
     color: rgba(255, 255, 255, 0.8);
     padding: 32px 0 40px;
 }
@@ -1663,4 +1674,296 @@ img {
     .project-title {
         font-size: 1.55rem;
     }
+}
+/* Center the hero content */
+.xai-hero {
+    display: flex;
+    justify-content: center;
+}
+
+.xai-hero-grid {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.xai-hero-copy {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.xai-hero-copy h1 {
+    text-align: center;
+    font-style: italic;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.xai-hero-description {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.xai-hero-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.xai-hero-stats {
+    display: flex;
+    justify-content: center;
+}
+.hero-event-info {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    color: #6b6265;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.hero-event-info span:nth-child(even) {
+    color: #8a2639;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Keep the selected section below the header */
+#overview,
+#applications,
+#agenda,
+#speakers,
+#registration {
+    scroll-margin-top: 90px;
+}
+
+/* =========================================
+   PANEL & AGENDA
+========================================= */
+
+.agenda-container {
+    max-width: 1000px;
+}
+
+.agenda-list {
+    position: relative;
+    margin-top: 65px;
+}
+
+/* Vertical timeline line */
+.agenda-list::before {
+    content: "";
+    position: absolute;
+    left: 155px;
+    top: 10px;
+    bottom: 10px;
+    width: 1px;
+    background: #d8c7cb;
+}
+
+/* Individual agenda item */
+.agenda-row {
+    display: grid;
+    grid-template-columns: 120px 70px 1fr;
+    position: relative;
+    min-height: 145px;
+}
+
+/* Time */
+.agenda-time {
+    text-align: right;
+    padding-right: 28px;
+    padding-top: 2px;
+}
+
+.agenda-time strong {
+    display: inline-block;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 600;
+    color: var(--msu-maroon);
+    letter-spacing: -0.5px;
+}
+
+.agenda-time span {
+    display: block;
+    margin-top: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+}
+
+/* Timeline marker */
+.agenda-marker {
+    position: relative;
+    z-index: 2;
+}
+
+.agenda-marker::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 29px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid var(--msu-maroon);
+}
+
+/* Content */
+.agenda-details {
+    padding: 0 0 55px 10px;
+}
+
+.agenda-type {
+    display: inline-block;
+    margin-bottom: 9px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--msu-maroon);
+}
+
+.agenda-details h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.agenda-details p {
+    max-width: 650px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.agenda-details .agenda-people {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.agenda-details strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .agenda-list {
+        margin-top: 45px;
+    }
+
+    .agenda-list::before {
+        left: 9px;
+    }
+
+    .agenda-row {
+        grid-template-columns: 35px 1fr;
+        min-height: auto;
+    }
+
+    .agenda-time {
+        grid-column: 2;
+        grid-row: 1;
+        text-align: left;
+        padding: 0 0 8px 0;
+    }
+
+    .agenda-time strong {
+        font-size: 22px;
+    }
+
+    .agenda-time span {
+        display: inline;
+        margin-left: 5px;
+    }
+
+    .agenda-marker {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+
+    .agenda-marker::before {
+        left: 3px;
+        top: 4px;
+    }
+
+    .agenda-details {
+        grid-column: 2;
+        padding: 0 0 40px 0;
+    }
+
+    .agenda-details h3 {
+        font-size: 21px;
+    }
+
+    .agenda-details p {
+        font-size: 14px;
+    }
+}
+.registration-panel .section-kicker {
+    margin-bottom: 10px;
+}
+
+.registration-panel h2 {
+    margin: 0;
+}
+
+.registration-panel .section-line {
+    margin-bottom: 40px;
+}
+/* Center registration heading */
+
+.registration-section > .container > .section-kicker,
+.registration-section > .container > h2,
+.registration-section > .container > .section-line {
+    text-align: center;
+}
+
+.registration-section > .container > .section-line {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* =========================================
+   CENTER REGISTRATION FORM
+========================================= */
+
+.registration-section > .container {
+    text-align: center;
+}
+
+.registration-section .registration-layout {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: block;
+    text-align: left;
+}
+
+.registration-panel {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
