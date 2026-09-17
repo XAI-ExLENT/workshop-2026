@@ -58,6 +58,12 @@ body {
     font-style: normal;
 }
 
+.title-underline {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+
 .xai-hero-description {
     color: var(--muted);
     font-size: clamp(1rem, 1.5vw, 1.3rem);
@@ -279,7 +285,7 @@ p {
 .brand-lockup {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 14px;
     flex-wrap: wrap;
 }
 
@@ -290,6 +296,16 @@ p {
     background: var(--white);
     border-radius: 6px;
     padding: 4px 10px;
+}
+
+.nsf-logo {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    background: var(--white);
+    border-radius: 6px;
+    padding: 6px;
+    flex-shrink: 0;
 }
 
 .bagley-logo {
