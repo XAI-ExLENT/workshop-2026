@@ -252,6 +252,11 @@ a {
     color: inherit;
 }
 
+#agenda a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
 p {
     color: var(--muted);
 }
@@ -262,7 +267,7 @@ p {
 }
 
 .narrow {
-    width: min(900px, calc(100% - 32px));
+    width: min(1180px, calc(100% - 32px));
 }
 
 .topbar {
@@ -877,11 +882,11 @@ p {
 }
 
 .registration-panel h2 {
-    font-size: clamp(2rem, 2.4vw, 2.5rem);
-    line-height: 1.2;
+    font-size: clamp(2.1rem, 3vw, 3rem);
+    line-height: 1.1;
     color: var(--text);
-    margin-bottom: 22px;
-    letter-spacing: -0.03em;
+    margin-bottom: 14px;
+    letter-spacing: -0.04em;
 }
 
 .reg-form {
@@ -1035,6 +1040,31 @@ p {
     font-size: 0.98rem;
     text-align: center;
     margin-top: 8px;
+}
+
+.registration-container {
+    max-width: 720px;
+}
+
+.registration-container ul {
+    margin: 0 0 20px 20px;
+    padding-left: 18px;
+}
+
+.registration-container li {
+    margin-bottom: 8px;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.registration-container p {
+    margin-top: 0;
+}
+
+.registration-container strong,
+.registration-container p,
+.registration-container li {
+    color: #000000;
 }
 
 .registration-container a {
@@ -1811,7 +1841,9 @@ html {
 ========================================= */
 
 .agenda-container {
-    max-width: 1000px;
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    max-width: none;
 }
 
 .agenda-list {
@@ -1997,27 +2029,26 @@ html {
 .registration-section>.container>.section-kicker,
 .registration-section>.container>h2,
 .registration-section>.container>.section-line {
-    text-align: center;
+    text-align: left;
 }
 
 .registration-section>.container>.section-line {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 
-
 /* =========================================
-   CENTER REGISTRATION FORM
+   MATCH REGISTRATION TO PAGE LAYOUT
 ========================================= */
 
 .registration-section>.container {
-    text-align: center;
+    text-align: left;
 }
 
 .registration-section .registration-layout {
     width: 100%;
-    max-width: 900px;
+    max-width: 1180px;
     margin: 0 auto;
     display: block;
     text-align: left;
@@ -2025,7 +2056,7 @@ html {
 
 .registration-panel {
     width: 100%;
-    max-width: 900px;
+    max-width: 1180px;
     margin: 0 auto;
 }
 
