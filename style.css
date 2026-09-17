@@ -2028,3 +2028,12 @@ html {
     max-width: 900px;
     margin: 0 auto;
 }
+
+.organizer-links a {
+    display: inline-block;
+    width: fit-content;
+    color: #5d1725;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: underline;
+}
