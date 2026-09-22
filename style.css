@@ -703,6 +703,10 @@ p {
     margin-top: 36px;
 }
 
+.organizer-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .speaker-announcement {
     margin: 28px 0 0;
     color: var(--muted);
@@ -1111,6 +1115,9 @@ p {
 }
 
 .registration-container .abstract-topic {
+    margin: 24px 0 26px;
+    font-size: 1.18rem;
+    line-height: 1.5;
     white-space: nowrap;
 }
 
@@ -2127,40 +2134,6 @@ html {
     width: 100%;
     max-width: 1180px;
     margin: 0 auto;
-}
-
-.organizer-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    margin-top: 28px;
-}
-
-.organizer-links a {
-    display: block;
-    padding: 16px 18px;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    background: var(--white);
-    color: #5d1725;
-    font-size: 1.05rem;
-    font-weight: 600;
-    line-height: 1.4;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.organizer-links a:hover,
-.organizer-links a:focus-visible {
-    border-color: rgba(93, 23, 37, 0.36);
-    box-shadow: 0 10px 24px rgba(31, 28, 29, 0.08);
-    transform: translateY(-2px);
-}
-
-.organizer-links a:focus-visible {
-    outline: 3px solid rgba(93, 23, 37, 0.3);
-    outline-offset: 3px;
 }
 
 @media (max-width: 760px) {
