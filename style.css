@@ -1107,7 +1107,11 @@ p {
 }
 
 .registration-container {
-    max-width: 720px;
+    max-width: 100%;
+}
+
+.registration-container .abstract-topic {
+    white-space: nowrap;
 }
 
 .registration-container ul {
@@ -2157,4 +2161,10 @@ html {
 .organizer-links a:focus-visible {
     outline: 3px solid rgba(93, 23, 37, 0.3);
     outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+    .registration-container .abstract-topic {
+        white-space: normal;
+    }
 }
