@@ -742,8 +742,7 @@ p {
     display: grid;
     place-items: center;
     width: 100%;
-    height: 280px;
-    min-height: 280px;
+    aspect-ratio: 4 / 5;
     border-radius: 18px;
     background: linear-gradient(135deg, rgba(93, 23, 37, 0.14), rgba(93, 23, 37, 0.04));
     color: var(--msu-maroon);
@@ -1621,12 +1620,6 @@ img {
         padding: 18px;
     }
 
-    .speaker-image {
-        height: 240px;
-        min-height: 240px;
-    }
-
-
     /* ---------- REGISTRATION SECTION ---------- */
 
     .registration-section {
@@ -1846,7 +1839,7 @@ img {
 }
 
 .xai-hero-grid {
-    width: 100%;
+    width: min(1500px, calc(100% - 48px));
     display: flex;
     justify-content: center;
 }
@@ -1907,7 +1900,9 @@ html {
 #overview,
 #applications,
 #agenda,
+#panelists,
 #speakers,
+#organizers,
 #registration {
     scroll-margin-top: 90px;
 }
@@ -2139,5 +2134,114 @@ html {
 @media (max-width: 760px) {
     .registration-container .abstract-topic {
         white-space: normal;
+    }
+}
+
+/* =========================================================
+   FINAL RESPONSIVE POLISH
+========================================================= */
+
+@media (min-width: 981px) and (max-width: 1150px) {
+    .speaker-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .xai-hero-grid {
+        width: calc(100% - 28px);
+    }
+
+    .agenda-container,
+    .registration-section > .container {
+        width: calc(100% - 28px);
+    }
+
+    .registration-layout {
+        width: 100%;
+    }
+
+    .registration-panel {
+        padding: 0;
+    }
+
+    .speaker-grid {
+        gap: 20px;
+    }
+
+    .speaker-image {
+        aspect-ratio: 4 / 5;
+    }
+}
+
+@media (max-width: 480px) {
+    .container,
+    .narrow,
+    .agenda-container,
+    .registration-section > .container {
+        width: calc(100% - 24px);
+    }
+
+    .topbar-inner {
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    .brand-lockup {
+        gap: 8px;
+    }
+
+    .nsf-logo {
+        width: 56px;
+        height: 56px;
+        padding: 4px;
+    }
+
+    .msu-logo {
+        width: min(240px, calc(100vw - 96px));
+        max-height: 56px;
+        padding: 3px 6px;
+    }
+
+    .main-nav {
+        gap: 6px 12px;
+        font-size: 0.78rem;
+    }
+
+    .xai-hero {
+        padding: 40px 0 48px;
+    }
+
+    .xai-hero-grid {
+        width: calc(100% - 24px);
+    }
+
+    .xai-hero-copy h1 {
+        font-size: clamp(2rem, 10vw, 2.7rem);
+    }
+
+    .section {
+        padding: 42px 0;
+    }
+
+    .section h2 {
+        font-size: clamp(1.9rem, 9vw, 2.4rem);
+    }
+
+    .speaker-card {
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .speaker-image {
+        border-radius: 14px;
+    }
+
+    .speaker-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .registration-container .abstract-topic {
+        font-size: 1.05rem;
     }
 }
