@@ -776,11 +776,24 @@ p {
     line-height: 1.45;
 }
 
+.speaker-card .speaker-unit {
+    color: var(--text);
+    font-weight: 400;
+}
+
+.speaker-card .speaker-role-secondary {
+    margin-top: 6px;
+}
+
 .speaker-card .speaker-affiliation {
     margin-top: 3px;
     color: var(--text);
     font-weight: 600;
     line-height: 1.45;
+}
+
+.speaker-card .speaker-affiliation-institution {
+    margin-top: 12px;
 }
 
 .speaker-card .speaker-research {
